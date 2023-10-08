@@ -1,15 +1,17 @@
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #f6f6f6;
   color: #333;
   padding: 20px;
-  display: grid;
-  place-items: center;
 }
 
-.title-name {
-  display: block;
-  gap: 20px;
+.application_forms__gCHho {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.application_form__Mw6vg {
   width: 70%;
   background: #ffffff;
   padding: 20px;
@@ -17,37 +19,20 @@ body {
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
 }
 
-.user-name {
-	display: block;
-	gap: 20px;
-	width: 70%;
-	background: #ffffff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
-}
-.back-name {
-	display: block;
-	gap: 20px;
-	width: 70%;
-	background: #ffffff;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
-}
-form {
-  width: 100%;
-}
-
-label {
+.input_label,
+.select_label {
   display: block;
   font-weight: 500;
-  margin-top: 15px;
-		margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #555;
 }
 
-input {
+.input_wrapper{
+  margin-top:25px;
+}
+
+
+.input_container {
   width: 90%;
   padding: 10px 15px;
   border: 1px solid #ddd;
@@ -56,26 +41,23 @@ input {
   color: #333;
 }
 
-
+.input_input:focus,
 input:focus {
   border-color: #009688;
-  box-shadow: 0 0 5px rgba(0, 150, 136, 0.4);
+  box-shadow: 0 0 5px rgba(0,150,136,.4);
   outline: none;
 }
-.input_container,
+
+
 input::placeholder {
   color: #999;
 }
 
-.btn {
-  margin-top: 25px;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 13px;
-  transition: all 0.225s linear;
-}
-
-.input_wrapper{
-	display: flex;
-	flex-direction: column;
-}
+.message {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13px;
+    transition: all .225s linear;
+    color: red;
+  }

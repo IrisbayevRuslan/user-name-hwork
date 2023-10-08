@@ -1,7 +1,7 @@
-import * as yup from "yup";
 import "./main.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+const applicationForm: HTMLDivElement = document.querySelector(".application_forms__gCHho") as HTMLDivElement;
+const businessForm: HTMLDivElement = document.querySelector(".bank_account_details") as HTMLDivElement;
 const brandName: HTMLInputElement = document.getElementById("name") as HTMLInputElement;
 const website: HTMLInputElement = document.getElementById("website") as HTMLInputElement;
 const country: HTMLInputElement = document.getElementById("country") as HTMLInputElement;
@@ -14,63 +14,111 @@ const btnNext: HTMLElement = document.querySelector('.btn') as HTMLButtonElement
 const regEX: RegExp = /^[A-Za-z0-9]+$/;
 const gmailSuffix: string = "@gmail.com";
 
-brandName.addEventListener('keydown', (e: KeyboardEvent) => {
-  const inputVal: string = brandName.value;
-  if (e.key === 'Enter') {
-    if (!regEX.test(inputVal) || inputVal === '') {
-      messageName.textContent = '🔴 Brand name is required';
-    } else {
-      messageName.textContent = "";
-    }
-  }
-});
+import * as Yup from 'yup';
 
-website.addEventListener('keydown', (e: KeyboardEvent) => {
-  // @ts-ignore
-  const inputVal: string = e.target.value;
-  if (e.key === 'Enter') {
-    if (inputVal === ""  || inputVal.endsWith(gmailSuffix)) {
-      messageWeb.textContent = '🔴 Website URL is required';
-    } else {
-      messageWeb.textContent = "";
-    }
-  }
-});
-
-country.addEventListener('keydown', (e: KeyboardEvent) => {
-  const inputVal: string = country.value;
-  if (e.key === 'Enter') {
-    if (inputVal === '') {
-      messageCountry.textContent = '🔴 Country is required';
-    } else {
-      messageCountry.textContent = "";
-    }
-  }
-});
-
-category.addEventListener('keydown', (e: KeyboardEvent) => {
-  const inputVal: string = category.value;
-  if (e.key === 'Enter') {
-    if (inputVal === '') {
-      messageCat.textContent = '🔴 Category is required';
-    } else {
-      messageCat.textContent = "";
-    }
-  }
+const schema = Yup.object().shape({
+  Brand: Yup.string().required('Brand name is required'),
+  Gmail: Yup.string()
+    .required('Website URL is required')
+    .matches(/@gmail\.com$/, 'Website URL must end with "@gmail.com"'),
+  Country: Yup.string().required('Country is required'),
+  Category: Yup.string().required('Category is required'),
 });
 
 
-
-btnNext.addEventListener("click", (e) => {
+btnNext.addEventListener('click', async (e) => {
   e.preventDefault();
 
   const formData = {
-    inputVAlue11: brandName.value,
-    inputVAlue21: website.value,
-    inputVAlue31: country.value,
-    inputVAlue41: category.value,
+    Brand: brandName.value,
+    Gmail: website.value,
+    Country: country.value,
+    Category: category.value,
   };
 
-  console.log(formData);
+  try {
+    await schema.validate(formData, { abortEarly: false });
+    console.log(formData);
+    messageName.textContent = '';
+    messageWeb.textContent = '';
+    messageCountry.textContent = '';
+    messageCat.textContent = '';
+  } catch (error) {
+    // @ts-ignore
+    error.inner.forEach((err) => {
+      if (err.path === 'Brand') {
 
+        messageName.textContent = `🔴${err.message}`;
+      } else if (err.path === 'Gmail') {
+        messageWeb.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'Country') {
+        messageCountry.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'Category') {
+        messageCat.textContent = `🔴 ${err.message}`;
+      }
+    });
+  }
+  applicationForm.style.display = "none";
+  businessForm.style.display = "block"
+
+});
+
+
+// Bank Acoount form
+
+const beneficiaryName: HTMLInputElement = document.getElementById("beneficiaryName") as HTMLInputElement;
+const iban: HTMLInputElement = document.getElementById("iban") as HTMLInputElement;
+const bankName: HTMLInputElement = document.getElementById("bankName") as HTMLInputElement;
+const swift: HTMLInputElement = document.getElementById("swift") as HTMLInputElement;
+const bankCurrency: HTMLInputElement = document.getElementById("bankCurrency") as HTMLInputElement;
+const messageBeneficiaryName: HTMLElement = document.querySelector('.message-bankName') as HTMLElement;
+const messageIban: HTMLElement = document.querySelector('.message-iban') as HTMLElement;
+const messagebankName: HTMLElement = document.querySelector('.message-bankName') as HTMLElement;
+const messageswift: HTMLElement = document.querySelector('.message-swift') as HTMLElement;
+const messagebankCurrency: HTMLElement = document.querySelector('.message-bankCurrency') as HTMLElement;
+const submitBankButton: HTMLElement = document.querySelector('#submitBankButton') as HTMLButtonElement;
+
+
+const bankAccountSchema = Yup.object().shape({
+  beneficiaryName: Yup.string().required('Beneficiary name is required'),
+  IBAN: Yup.string().matches(/^[A-Z]{2}[0-9]{2}[0-9]{3}[0-9]{16}$/, 'IBAN is required'),
+  bankName: Yup.string().required('Bank name is required'),
+  swift: Yup.string().matches(/^[A-Z]{6}[0-9]{2}[A-Z]{3}$/, 'SWIFT is required'),
+  bankCurrency: Yup.string().required('Bank currency is required'),
+});
+
+submitBankButton.addEventListener('click', async (e) => {
+  e.preventDefault();
+  const bankFormData = {
+    beneficiaryName: beneficiaryName.value,
+    IBAN: iban.value,
+    bankName: bankName.value,
+    swift: swift.value,
+    bankCurrency: bankCurrency.value,
+  };
+
+  try {
+    await bankAccountSchema.validate(bankFormData, { abortEarly: false });
+    console.log(bankFormData);
+    messageBeneficiaryName.textContent = '';
+    messageIban.textContent = '';
+    messagebankName.textContent = '';
+    messageswift.textContent = '';
+    messagebankCurrency.textContent = '';
+  } catch (error) {
+    // @ts-ignore
+    error.inner.forEach((err) => {
+      if (err.path === 'beneficiaryName') {
+        messageBeneficiaryName.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'iban') {
+        messageIban.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'bankName') {
+        messagebankName.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'swift') {
+        messageswift.textContent = `🔴 ${err.message}`;
+      } else if (err.path === 'bankCurrency') {
+        messagebankCurrency.textContent = `🔴 ${err.message}`;
+      }
+    });
+  }
 });

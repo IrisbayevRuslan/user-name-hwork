@@ -1,174 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-</head>
-
-<body>
-  <div class="title-name">
-    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
-      Business owner
-    </div>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Firs name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Last name</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <button type="submit" class="btn btn-success">Next</button>
-    </form>
-
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+  <body>
 
 
-  <div class="user-name">
-    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
-      Business details
-    </div>
-    <form>
-      <!-- Brand name input field -->
-      <div class="input_wrapper">
-        <label for="name" class="input_label">
-          <div class="typography_wrapper">Brand name (in English) *</div>
-        </label>
+<!-- BANK ACCOUNT SECTION -->
 
-        <div class="brand_container">
-          <input class="input_container" placeholder="Brand name (In English)" maxlength="50" id="name" />
-        </div>
-        <div class="message-name message"></div>
-      </div>
-      <!-- Description input field -->
-      <div class="input_wrapper">
-        <label for="description" class="input_label">
-          <div class="typography_wrapper">Description (optional)</div>
-        </label>
-        <input class="input_container" placeholder="Description" maxlength="40" id="description" />
-      </div>
+    <div style="display: block;" class="application_forms__gCHho">
+      <div class="application_form__Mw6vg">
+        <form id="businessForm">
+          <!-- Business details section -->
 
-      <!--Website (URL) -->
-      <div class="input_wrapper">
-        <label for="website" class="input_label">
-          <div class="typography_wrapper">Website (URL)</div>
-        </label>
-        <input class="website_input input_container" placeholder="Website" maxlength="40" id="website" />
-      </div>
-      <div class="message-website message"></div>
-      <!-- Country input field -->
+          <div
+            class="typography_wrapper application_label__cFxH4"
+            style="font-size: 20px; font-weight: 600;"
+          >
+            Business details
+          </div>
 
-      <div class="input_wrapper">
-        <label for="country" class="input_label">
-          <div class="typography_wrapper">Country *</div>
-        </label>
-        <input class="country_input input_container" placeholder="Country" maxlength="50" id="country" />
-        <datalist id="scripts1">
-          <option value="USA"></option>
-          <option value="UAE"></option>
-          <option value="Uzbekistan"></option>
-        </datalist>
-      </div>
-      <div class="message-country message"></div>
-      <!-- Category input field -->
+          <!-- Brand name input field -->
+          <div class="input_wrapper">
+            <label for="name" class="input_label">
+              <div class="typography_wrapper">Brand name (in English) *</div>
+            </label>
 
+            <div class="brand_container">
+              <input
+                data-cy="name-input"
+                class="input_container"
+                placeholder="Brand name (In English)"
+                maxlength="50"
+                id="name"
+                name="name"
+                value=""
+                required="ddd"
+              />
+            </div>
+            <div class="message-name message"></div>
+          </div>
+          <!-- Description input field -->
+          <div class="input_wrapper">
+            <label for="description" class="input_label">
+              <div class="typography_wrapper">Description (optional)</div>
+            </label>
+            <input
+              data-cy="description-input"
+              class="description_input input_container"
+              placeholder="Description"
+              maxlength="50"
+              id="description"
+              name="description"
+              value=""
+            />
+          </div>
 
-      <div class="input_wrapper">
-        <label for="category" class="input_label">
-          <div class="typography_wrapper">Category *</div>
-        </label>
-        <input data-cy="category-input" class="input_container" placeholder="Category" maxlength="50" id="category" />
-        <datalist id="scripts2">
-          <option value="Dev Ops"></option>
-          <option value="Finance"></option>
-          <option value="People & HR"></option>
-          <option value="Product"></option>
-        </datalist>
-      </div>
-      <div class="message-category message"></div>
-    </form>
-    <button class="btn btn-success">Next</button>
-  </div>
+          <!--Website (URL) -->
+          <div class="input_wrapper">
+            <label for="website" class="input_label">
+              <div class="typography_wrapper">Website (URL)</div>
+            </label>
+            <input
+              data-cy="website-input"
+              class="website_input input_container"
+              placeholder="Website"
+              maxlength="50"
+              id="website"
+              name="website"
+              value=""
+              required=""
+            />
+          </div>
+          <div class="message-website message"></div>
+          <!-- Country input field -->
 
+          <div class="input_wrapper">
+            <label for="country" class="input_label">
+              <div class="typography_wrapper">Country *</div>
+            </label>
+            <input
+              data-cy="country-input"
+              class="country_input input_container"
+              placeholder="Country"
+              maxlength="50"
+              id="country"
+              name="country"
+              value=""
+              required=""
+              list="scripts1"
+            />
+            <datalist id="scripts1">
+              <option value="USA"></option>
+              <option value="UAE"></option>
+              <option value="Uzbekistan"></option>
+            </datalist>
+          </div>
+          <div class="message-country message"></div>
+          <!-- Category input field -->
+										<div class="input_wrapper">
+											<label for="country" class="input_label">
+													<div class="typography_wrapper">Category *</div>
+											</label>
+											<input
+													data-cy="category-input"
+													class="category_input input_container"
+													placeholder="Category"
+													maxlength="50"
+													id="category"
+													name="category"
+													value=""
+													required=""
+													list="scripts2"
+											/>
+											<datalist id="scripts2">
+													<option value="Dev Ops"></option>
+													<option value="Finance"></option>
+													<option value="People & HR"></option>
+													<option value="Product"></option>
+											</datalist>
+									</div>
+									<div class="message-category message"></div>
+							</form>
+							<button class="btn" id="nextButton">Next</button>
+					</div>
 
-  <div class="back-name">
-    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
-      Bank accaount details
-    </div>
-    <form>
-      <!-- Brand name input field -->
-      <div class="input_wrapper">
-        <label for="name" class="input_label">
-          <div class="typography_wrapper">Banificiary name *</div>
-        </label>
-
-        <div class="brand_container">
-          <input class="input_container" placeholder="Banificiary name e.g Alphabet Inc." maxlength="50" id="name" />
-        </div>
-        <div class="message-name message"></div>
-      </div>
-      <!-- Description input field -->
-      <div class="input_wrapper">
-        <label for="description" class="input_label">
-          <div class="typography_wrapper">IBAN *</div>
-        </label>
-        <input class="input_container" placeholder="IBAN" maxlength="40" id="description" />
-      </div>
-
-      <!--Website (URL) -->
-      <div class="input_wrapper">
-        <label for="website" class="input_label">
-          <div class="typography_wrapper">Bank name *</div>
-        </label>
-        <input class="website_input input_container" placeholder="Bank name" maxlength="40" id="website" />
-      </div>
-      <div class="message-website message"></div>
-      <!-- Country input field -->
-
-      <div class="input_wrapper">
-        <label for="country" class="input_label">
-          <div class="typography_wrapper">SWIFT *</div>
-        </label>
-        <input class="country_input input_container" placeholder="SWIFT" maxlength="50" id="country" />
-        <!-- <datalist id="scripts1">
-          <option value="USA"></option>
-          <option value="UAE"></option>
-          <option value="Uzbekistan"></option>
-        </datalist> -->
-      </div>
-      <div class="message-country message"></div>
-      <!-- Category input field -->
-
-
-      <div class="input_wrapper">
-        <label for="category" class="input_label">
-          <div class="typography_wrapper">Bank currency *</div>
-        </label>
-        <input data-cy="category-input" class="input_container" placeholder="Bank currency" maxlength="50"
-          id="category" />
-        <!-- <datalist id="scripts2">
-          <option value="Dev Ops"></option>
-          <option value="Finance"></option>
-          <option value="People & HR"></option>
-          <option value="Product"></option>
-        </datalist> -->
-      </div>
-      <div class="message-category message">
-        <button class="btn btn-info">Back</button>
-        <button class="btn btn-success">Next</button>
-
-      </div>
-    </form>
-  </div>
+			</div>
 
 
+<!-- BANK ACCOUNT SECTION -->
+			<div style="display: none;" class="bank_account_details">
+					<div class="application_form__Mw6vg">
+							<form id="bankAccountForm">
+									<!-- Bank Account details section -->
+
+									<div
+											class="typography_wrapper application_label__cFxH4"
+											style="font-size: 20px; font-weight: 600;"
+									>
+											Bank Account details
+									</div>
+
+									<!-- Beneficiary name input field -->
+									<div class="input_wrapper">
+											<label for="beneficiaryName" class="input_label">
+													<div class="typography_wrapper">Beneficiary name *</div>
+											</label>
+											<input
+													data-cy="beneficiaryName-input"
+													class="input_container"
+													placeholder="Beneficiary name, e.g Alphabet Inc."
+													maxlength="50"
+													id="beneficiaryName"
+													name="beneficiaryName"
+													value=""
+													required=""
+											/>
+									</div>
+
+									<!-- IBAN input field -->
+									<div class="input_wrapper">
+											<label for="iban" class="input_label">
+													<div class="typography_wrapper">IBAN *</div>
+											</label>
+											<input
+													data-cy="iban-input"
+													class="input_container"
+													placeholder="IBAN"
+													maxlength="50"
+													id="iban"
+													name="iban"
+													value=""
+													required=""
+											/>
+									</div>
+
+									<!-- Bank name field -->
+									<div class="input_wrapper">
+											<label for="bankName" class="input_label">
+													<div class="typography_wrapper">Bank name *</div>
+											</label>
+											<input
+													data-cy="bankName-input"
+													class="input_container"
+													placeholder="Bank name"
+													maxlength="50"
+													id="bankName"
+													name="bankName"
+													value=""
+													required=""
+											/>
+									</div>
+
+									<!-- SWIFT input field -->
+									<div class="input_wrapper">
+											<label for="swift" class="input_label">
+													<div class="typography_wrapper">SWIFT *</div>
+											</label>
+											<input
+													data-cy="swift-input"
+													class="input_container"
+													placeholder="SWIFT"
+													maxlength="50"
+													id="swift"
+													name="swift"
+													value=""
+													required=""
+											/>
+									</div>
+									<!-- Bank currency -->
+									<div class="input_wrapper">
+										<label for="bankCurrency" class="input_label">
+												<div class="typography_wrapper">Bank currency *</div>
+										</label>
+										<input
+												data-cy="bankCurrency-input"
+												class="input_container"
+												placeholder="bankCurrency"
+												maxlength="50"
+												id="bankCurrency"
+												name="bankCurrency"
+												value=""
+												required=""
+												list="scripts3"
+										/>
+										<datalist id="scripts3">
+												<option value="EUR"></option>
+												<option value="USD"></option>
+												<option value="UZS"></option>
+												<option value="DRHM"></option>
+										</datalist>
+								</div>
+
+								<div class="message-beneficiaryName message"></div>
+								<div class="message-iban message"></div>
+								<div class="message-bankName message"></div>
+								<div class="message-swift message"></div>
+								<div class="message-bankCurrency message"></div>
+						</form>
+						<button class="btn" id="submitBankButton">Next</button>
+				</div>
+		</div>
 </body>
-
 </html>
