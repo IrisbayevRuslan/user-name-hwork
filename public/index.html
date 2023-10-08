@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="title-name">
+    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
+      Business owner
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Firs name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Last name</label>
+        <input type="text" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <button type="submit" class="btn btn-success">Next</button>
+    </form>
+
+  </div>
+
+
+  <div class="user-name">
+    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
+      Business details
+    </div>
+    <form>
+      <!-- Brand name input field -->
+      <div class="input_wrapper">
+        <label for="name" class="input_label">
+          <div class="typography_wrapper">Brand name (in English) *</div>
+        </label>
+
+        <div class="brand_container">
+          <input class="input_container" placeholder="Brand name (In English)" maxlength="50" id="name" />
+        </div>
+        <div class="message-name message"></div>
+      </div>
+      <!-- Description input field -->
+      <div class="input_wrapper">
+        <label for="description" class="input_label">
+          <div class="typography_wrapper">Description (optional)</div>
+        </label>
+        <input class="input_container" placeholder="Description" maxlength="40" id="description" />
+      </div>
+
+      <!--Website (URL) -->
+      <div class="input_wrapper">
+        <label for="website" class="input_label">
+          <div class="typography_wrapper">Website (URL)</div>
+        </label>
+        <input class="website_input input_container" placeholder="Website" maxlength="40" id="website" />
+      </div>
+      <div class="message-website message"></div>
+      <!-- Country input field -->
+
+      <div class="input_wrapper">
+        <label for="country" class="input_label">
+          <div class="typography_wrapper">Country *</div>
+        </label>
+        <input class="country_input input_container" placeholder="Country" maxlength="50" id="country" />
+        <datalist id="scripts1">
+          <option value="USA"></option>
+          <option value="UAE"></option>
+          <option value="Uzbekistan"></option>
+        </datalist>
+      </div>
+      <div class="message-country message"></div>
+      <!-- Category input field -->
+
+
+      <div class="input_wrapper">
+        <label for="category" class="input_label">
+          <div class="typography_wrapper">Category *</div>
+        </label>
+        <input data-cy="category-input" class="input_container" placeholder="Category" maxlength="50" id="category" />
+        <datalist id="scripts2">
+          <option value="Dev Ops"></option>
+          <option value="Finance"></option>
+          <option value="People & HR"></option>
+          <option value="Product"></option>
+        </datalist>
+      </div>
+      <div class="message-category message"></div>
+    </form>
+    <button class="btn btn-success">Next</button>
+  </div>
+
+
+  <div class="back-name">
+    <div class="typography_wrapper application_label__cFxH4" style="font-size: 20px; font-weight: 600;">
+      Bank accaount details
+    </div>
+    <form>
+      <!-- Brand name input field -->
+      <div class="input_wrapper">
+        <label for="name" class="input_label">
+          <div class="typography_wrapper">Banificiary name *</div>
+        </label>
+
+        <div class="brand_container">
+          <input class="input_container" placeholder="Banificiary name e.g Alphabet Inc." maxlength="50" id="name" />
+        </div>
+        <div class="message-name message"></div>
+      </div>
+      <!-- Description input field -->
+      <div class="input_wrapper">
+        <label for="description" class="input_label">
+          <div class="typography_wrapper">IBAN *</div>
+        </label>
+        <input class="input_container" placeholder="IBAN" maxlength="40" id="description" />
+      </div>
+
+      <!--Website (URL) -->
+      <div class="input_wrapper">
+        <label for="website" class="input_label">
+          <div class="typography_wrapper">Bank name *</div>
+        </label>
+        <input class="website_input input_container" placeholder="Bank name" maxlength="40" id="website" />
+      </div>
+      <div class="message-website message"></div>
+      <!-- Country input field -->
+
+      <div class="input_wrapper">
+        <label for="country" class="input_label">
+          <div class="typography_wrapper">SWIFT *</div>
+        </label>
+        <input class="country_input input_container" placeholder="SWIFT" maxlength="50" id="country" />
+        <!-- <datalist id="scripts1">
+          <option value="USA"></option>
+          <option value="UAE"></option>
+          <option value="Uzbekistan"></option>
+        </datalist> -->
+      </div>
+      <div class="message-country message"></div>
+      <!-- Category input field -->
+
+
+      <div class="input_wrapper">
+        <label for="category" class="input_label">
+          <div class="typography_wrapper">Bank currency *</div>
+        </label>
+        <input data-cy="category-input" class="input_container" placeholder="Bank currency" maxlength="50"
+          id="category" />
+        <!-- <datalist id="scripts2">
+          <option value="Dev Ops"></option>
+          <option value="Finance"></option>
+          <option value="People & HR"></option>
+          <option value="Product"></option>
+        </datalist> -->
+      </div>
+      <div class="message-category message">
+        <button class="btn btn-info">Back</button>
+        <button class="btn btn-success">Next</button>
+
+      </div>
+    </form>
+  </div>
+
+
+</body>
+
+</html>

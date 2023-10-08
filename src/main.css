@@ -1,0 +1,81 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #f6f6f6;
+  color: #333;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.title-name {
+  display: block;
+  gap: 20px;
+  width: 70%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+	display: block;
+	gap: 20px;
+	width: 70%;
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
+}
+.back-name {
+	display: block;
+	gap: 20px;
+	width: 70%;
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.1);
+}
+form {
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-top: 15px;
+		margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  width: 90%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+input:focus {
+  border-color: #009688;
+  box-shadow: 0 0 5px rgba(0, 150, 136, 0.4);
+  outline: none;
+}
+.input_container,
+input::placeholder {
+  color: #999;
+}
+
+.btn {
+  margin-top: 25px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 13px;
+  transition: all 0.225s linear;
+}
+
+.input_wrapper{
+	display: flex;
+	flex-direction: column;
+}
