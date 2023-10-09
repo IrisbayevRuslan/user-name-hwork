@@ -7,10 +7,88 @@
   </head>
   <body>
 
+<!-- BUSINESS Owner -->
+<div style="display: block;" class="application_forms__gCHho">
+	<div class="application_form__Mw6vg">
 
-<!-- BANK ACCOUNT SECTION -->
 
-    <div style="display: block;" class="application_forms__gCHho">
+		<div style="display: block;" class="BussinesOwner">
+			<form id="businessOwner">
+					<!-- Business owner section -->
+
+					<div
+							class="typography_wrapper application_label__cFxH4"
+							style="font-size: 20px; font-weight: 600;"
+					>
+							Business owner
+					</div>
+<!-- First name input field -->
+<div class="input_wrapper">
+	<label for="firstName" class="input_label">
+			<div class="typography_wrapper">First name *</div>
+	</label>
+
+	<div class="brand_container">
+			<input
+					data-cy="firstName-input"
+					class="input_container"
+					placeholder="First name"
+					maxlength="50"
+					id="firstName"
+					name="firstName"
+					value=""
+					required
+			/>
+	</div>
+	<div class="message-firstName message"></div>
+</div>
+
+<!-- Last name input field -->
+<div class="input_wrapper">
+	<label for="lastName" class="input_label">
+			<div class="typography_wrapper">Last name *</div>
+	</label>
+
+	<div class="brand_container">
+			<input
+					data-cy="lastName-input"
+					class="input_container"
+					placeholder="Last name"
+					maxlength="50"
+					id="lastName"
+					name="lastName"
+					value=""
+					required
+			/>
+	</div>
+	<div class="message-lastName message"></div>
+</div>
+					<!-- gmail input field -->
+					<div class="input_wrapper">
+						<label for="gmail" class="input_label">
+								<div class="typography_wrapper">gmail *</div>
+						</label>
+
+						<div class="brand_container">
+								<input
+										data-cy="gmail-input"
+										class="input_container"
+										placeholder="gmail "
+										maxlength="50"
+										id="gmail"
+										name="gmail"
+										value=""
+										required="ddd"
+								/>
+						</div>
+						<div class="message-gmail message"></div>
+				</div>
+				</form>
+				<button class="btn" id="ownerButton">Next</button>
+	</div>
+
+<!-- BUSINESS DETAILS -->
+    <div style="display: none;" class="BussinesDetails">
       <div class="application_form__Mw6vg">
         <form id="businessForm">
           <!-- Business details section -->

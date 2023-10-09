@@ -61,3 +61,7 @@ input::placeholder {
     transition: all .225s linear;
     color: red;
   }
+
+  .btn{
+    background-color: #009688;
+  }
